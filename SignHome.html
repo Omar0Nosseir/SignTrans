@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignConnect</title>
+    <link rel="stylesheet" href="SignDesign.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header>
+        <div class="logo">
+            <i class="fas fa-hands"></i>
+            <span>Targemly</span>
+        </div>
+        <div class="room-info">
+            <span id="roomCodeDisplay">Room Code: </span>
+            <button id="copyRoomCode"><i class="fas fa-copy"></i> Copy</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="joinForm">
+                <h1>Welcome to Targemly</h1>
+                <p>Join or create a sign language communication room.</p>
+                <input type="text" id="roomCode" placeholder="Enter Room Code">
+                <button id="joinButton"><i class="fas fa-sign-in-alt"></i> Join Room</button>
+                <button id="createButton"><i class="fas fa-plus"></i> Create Room</button>
+            </div>
+
+            <div id="videoContainer" style="display: none;">
+                <div class="video-wrapper">
+                    <video id="localVideo" autoplay muted></video>
+                    <video id="remoteVideo" autoplay></video>
+                </div>
+                <div class="controls">
+                    <button id="toggleVideo"><i class="fas fa-video"></i> Video On</button>
+                    <button id="toggleAudio"><i class="fas fa-microphone"></i> Unmute</button>
+                    <button id="leaveRoom"><i class="fas fa-sign-out-alt"></i> Leave</button>
+                </div>
+            </div>
+
+            <div id="chatContainer" style="display: none;">
+                <div id="chatBox"></div>
+                <div class="chat-input">
+                    <textarea id="chatInput" placeholder="Type your message here..."></textarea>
+                    <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+
+            <div class="features">
+                <button id="gestureRecognition"><i class="fas fa-hand-paper"></i> Gesture Recognition</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Targemly Website. Empowering communication through sign language.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <script src="SignFunc.js"></script>
+    <script>
+        // Particles.js configuration
+        particlesJS.load('particles-js', 'particles.json', function() {
+            console.log('Particles.js loaded');
+        });
+    </script>
+</body>
+</html>
